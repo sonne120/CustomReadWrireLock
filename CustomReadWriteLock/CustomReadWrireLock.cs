@@ -13,7 +13,6 @@ namespace CustomReadWriteLock
         {
             Console.WriteLine("CustomReadWriteLock Demo\n");
 
-            // Start multiple reader and writer tasks
             var tasks = new Task[6];
 
             tasks[0] = Task.Run(() => WriterTask(1));
@@ -26,7 +25,6 @@ namespace CustomReadWriteLock
             Task.WaitAll(tasks);
 
             Console.WriteLine($"\nFinal shared value: {_sharedValue}");
-            Console.WriteLine("Demo completed successfully!");
         }
 
         static void ReaderTask(int id)
